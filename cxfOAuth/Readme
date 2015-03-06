@@ -1,0 +1,7 @@
+http://localhost:8080/cxfOAuth/services/myapp/
+
+http://localhost:8080/cxfOAuth/services/myapp/authorize
+
+http://localhost:8080/cxfOAuth/services/oauth/token
+
+http://localhost:8080/cxfOAuth/services/oauth/validate
