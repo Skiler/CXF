@@ -138,8 +138,9 @@ public class MyAppClient {
 		bean.setAddress("https://localhost:8443/cxfOAuth/services/oauth/authorize?client_id=user&scope=updateCalendar-7&response_type=code");
 
 		SpringBusFactory bf = new SpringBusFactory();
-		URL busFile = new URL(
-				"file://\\java\\i2S-devenv\\workspaces\\workspaceTests\\cxfOAuth\\src\\main\\resources\\wsClient.xml");
+		// URL busFile = new URL(
+		// "file://\\Users\\rmoliveira\\Documents\\GitHub\\CXF\\cxfOAuth\\src\\main\\resources\\wsClient.xml");
+		URL busFile = MyAppClient.class.getResource("/wsClient.xml");
 		Bus springBus = bf.createBus(busFile.toString());
 		bean.setBus(springBus);
 

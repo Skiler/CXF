@@ -8,7 +8,7 @@
 		<Set name="loginService">
 			<New class="org.eclipse.jetty.security.HashLoginService">
 				<Set name="name">LoginService</Set>
-				<Set name="config">C:/java/i2S-devenv/workspaces/workspaceTests/cxfOAuth/src/main/resources/users.properties</Set>
+				<Set name="config"><SystemProperty name="oauthsample.home" default="." />/src/main/resources/users.properties</Set>
 			</New>
 		</Set>
 <!-- 		<Set name="authenticator"> -->
