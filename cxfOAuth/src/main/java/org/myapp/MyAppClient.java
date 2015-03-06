@@ -30,7 +30,6 @@ public class MyAppClient {
 			.create("http://localhost:8080/cxfOAuth/services/oauth/token");;
 	private String authorizationServiceURI = "http://localhost:8080/cxfOAuth/services/oauth/token";
 	private Consumer consumer = new Consumer("ass", "lakbjs");
-	private static final String CRYPTO_RESOURCE_PROPERTIES = "alice.properties";
 
 	// inject properties, register the client application...
 
@@ -106,7 +105,9 @@ public class MyAppClient {
 
 				// try to access the end user resource again
 				Response response = endUserResourceClient.get();
-
+				System.out.println("Response code: " + response.getStatus());
+				System.out.println("Data: "
+						+ IOUtils.toString((InputStream) response.getEntity()));
 			} else {
 				throw ex;
 			}
