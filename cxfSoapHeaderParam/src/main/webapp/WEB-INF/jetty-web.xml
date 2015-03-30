@@ -1,0 +1,22 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+
+<!--This is the Jetty configuration to run the backend with JTA / JNDI support. -->
+
+<Configure id="oauthsample" class="org.eclipse.jetty.webapp.WebAppContext">
+	<Get name="securityHandler">
+		<Set name="loginService">
+			<New class="org.eclipse.jetty.security.HashLoginService">
+				<Set name="name">LoginService</Set>
+				<Set name="config"><SystemProperty name="oauthsample.home" default="." />/src/main/resources/users.properties</Set>
+			</New>
+		</Set>
+<!-- 		<Set name="authenticator"> -->
+<!-- 			<New class="org.eclipse.jetty.security.authentication.FormAuthenticator"> -->
+<!-- 			</New> -->
+<!-- 		</Set> -->
+<!-- 		<Set name="checkWelcomeFiles">true</Set> -->
+	</Get>
+	
+</Configure>
+
